@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package second;
+
+service Service {
+  rpc OtherRpc(OtherRpcRequest) returns (OtherRpcResponse);
+}
+
+message OtherRpcRequest {
+  string id = 1;
+}
+
+message OtherRpcResponse {
+  Foo foo = 1;
+}
+
+message Foo {
+  int64 count = 1;
+}

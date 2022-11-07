@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package first;
+
+import "second.proto";
+
+service Service {
+  rpc SomeRpc(SomeRpcRequest) returns (SomeRpcResponse);
+}
+
+message SomeRpcRequest {
+  Foo id = 1;
+}
+
+message SomeRpcResponse {
+  second.Foo foo = 1;
+}
+
+message Foo {
+  string id = 1;
+}
